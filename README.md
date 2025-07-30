@@ -12,26 +12,26 @@ To simulate and evaluate autonomous decision-making for unmanned combat aircraft
 
 ##  Key Features
 
-- 🧠 Modular behavior tree engine  
-- 🌐 Web-based UI (Flask)  
-- ⚙️ Dynamic mission simulations  
-- ✅ Easily extendable tree nodes  
-- 🔄 Real-time feedback and visual state tracking
+-  Modular behavior tree engine  
+-  Web-based UI (Flask)  
+-  Dynamic mission simulations  
+-  Easily extendable tree nodes  
+-  Real-time feedback and visual state tracking
 
 ---
 
 ##  Project Structure
-├──app.py                      # Main Flask app
+-  app.py                      # Main Flask app
 
-├── behavior_trees/            # Core behavior tree logic
+-   behavior_trees/            # Core behavior tree logic
 
-├── templates/                 # Web interface templates
+-   templates/                 # Web interface templates
 
-├── static/                    # CSS/JS and visualization assets
+-   static/                    # CSS/JS and visualization assets
 
 
 ## Run the web interface
-  -  python app.py
+  python app.py
 
 
 
