@@ -1,0 +1,64 @@
+{
+  "aircraft_id": "ENEMY_001",
+  "name": "Enemy Fighter",
+  "functionalities": [
+    {
+      "id": "takeoff",
+      "name": "TakeOff",
+      "active": true
+    },
+    {
+      "id": "navigate",
+      "name": "Navigate",
+      "active": true
+    },
+    {
+      "id": "enemydetection",
+      "name": "EnemyDetection",
+      "active": true
+    },
+    {
+      "id": "missilenavigation",
+      "name": "MissileNavigation",
+      "active": true
+    },
+    {
+      "id": "deployflares",
+      "name": "DeployFlares",
+      "active": true
+    }
+  ],
+  "behavior_tree": {
+    "root": {
+      "type": "sequence",
+      "children": [
+        {
+          "type": "action",
+          "name": "TakeOff"
+        },
+        {
+          "type": "action",
+          "name": "Navigate"
+        },
+        {
+          "type": "action",
+          "name": "EnemyDetection"
+        },
+        {
+          "type": "selector",
+          "children": [
+            {
+              "type": "action",
+              "name": "MissileNavigation"
+            },
+            {
+              "type": "action",
+              "name": "DeployFlares"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "created_at": "2024-01-15T10:30:00"
+}

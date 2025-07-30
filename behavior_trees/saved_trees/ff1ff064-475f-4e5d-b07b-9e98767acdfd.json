@@ -1,0 +1,50 @@
+{
+  "aircraft_id": "ff1ff064-475f-4e5d-b07b-9e98767acdfd",
+  "name": "1",
+  "functionalities": [
+    {
+      "id": "takeoff",
+      "name": "TakeOff",
+      "icon": "fas fa-plane-departure"
+    },
+    {
+      "id": "navigate",
+      "name": "Navigate",
+      "icon": "fas fa-route"
+    },
+    {
+      "id": "targetlock",
+      "name": "TargetLock",
+      "icon": "fas fa-crosshairs"
+    },
+    {
+      "id": "bombdrop",
+      "name": "BombDrop",
+      "icon": "fas fa-bomb"
+    }
+  ],
+  "behavior_tree": {
+    "root": {
+      "type": "sequence",
+      "children": [
+        {
+          "type": "action",
+          "name": "TakeOff"
+        },
+        {
+          "type": "action",
+          "name": "Navigate"
+        },
+        {
+          "type": "action",
+          "name": "TargetLock"
+        },
+        {
+          "type": "action",
+          "name": "BombDrop"
+        }
+      ]
+    }
+  },
+  "created_at": "2025-07-23T16:41:06.848641"
+}

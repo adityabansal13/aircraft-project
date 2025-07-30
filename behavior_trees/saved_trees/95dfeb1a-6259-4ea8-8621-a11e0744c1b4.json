@@ -1,0 +1,77 @@
+{
+  "aircraft_id": "95dfeb1a-6259-4ea8-8621-a11e0744c1b4",
+  "name": "AIRcraft1",
+  "functionalities": [
+    {
+      "id": "takeoff",
+      "name": "TakeOff",
+      "icon": "fas fa-plane-departure"
+    },
+    {
+      "id": "navigate",
+      "name": "Navigate",
+      "icon": "fas fa-route"
+    },
+    {
+      "id": "targetlock",
+      "name": "TargetLock",
+      "icon": "fas fa-crosshairs"
+    },
+    {
+      "id": "deployflares",
+      "name": "DeployFlares",
+      "icon": "fas fa-fire"
+    },
+    {
+      "id": "bombdrop",
+      "name": "BombDrop",
+      "icon": "fas fa-bomb"
+    },
+    {
+      "id": "enemydetection",
+      "name": "EnemyDetection",
+      "icon": "fas fa-radar"
+    },
+    {
+      "id": "missilenavigation",
+      "name": "MissileNavigation",
+      "icon": "fas fa-rocket"
+    }
+  ],
+  "behavior_tree": {
+    "root": {
+      "type": "sequence",
+      "children": [
+        {
+          "type": "action",
+          "name": "TakeOff"
+        },
+        {
+          "type": "action",
+          "name": "Navigate"
+        },
+        {
+          "type": "action",
+          "name": "TargetLock"
+        },
+        {
+          "type": "action",
+          "name": "DeployFlares"
+        },
+        {
+          "type": "action",
+          "name": "BombDrop"
+        },
+        {
+          "type": "action",
+          "name": "EnemyDetection"
+        },
+        {
+          "type": "action",
+          "name": "MissileNavigation"
+        }
+      ]
+    }
+  },
+  "created_at": "2025-07-18T13:36:49.619890"
+}

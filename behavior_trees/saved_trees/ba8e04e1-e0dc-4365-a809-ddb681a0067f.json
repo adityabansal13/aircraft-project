@@ -1,0 +1,59 @@
+{
+  "aircraft_id": "ba8e04e1-e0dc-4365-a809-ddb681a0067f",
+  "name": "new 1",
+  "functionalities": [
+    {
+      "id": "takeoff",
+      "name": "TakeOff",
+      "icon": "fas fa-plane-departure"
+    },
+    {
+      "id": "navigate",
+      "name": "Navigate",
+      "icon": "fas fa-route"
+    },
+    {
+      "id": "targetlock",
+      "name": "TargetLock",
+      "icon": "fas fa-crosshairs"
+    },
+    {
+      "id": "enemydetection",
+      "name": "EnemyDetection",
+      "icon": "fas fa-radar"
+    },
+    {
+      "id": "missilenavigation",
+      "name": "MissileNavigation",
+      "icon": "fas fa-rocket"
+    }
+  ],
+  "behavior_tree": {
+    "root": {
+      "type": "sequence",
+      "children": [
+        {
+          "type": "action",
+          "name": "TakeOff"
+        },
+        {
+          "type": "action",
+          "name": "Navigate"
+        },
+        {
+          "type": "action",
+          "name": "TargetLock"
+        },
+        {
+          "type": "action",
+          "name": "EnemyDetection"
+        },
+        {
+          "type": "action",
+          "name": "MissileNavigation"
+        }
+      ]
+    }
+  },
+  "created_at": "2025-07-23T17:44:14.530779"
+}

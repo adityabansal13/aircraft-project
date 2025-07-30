@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRDO Aircraft Functionality System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <!-- <img src="/static/css/images/drdo-logo.png" alt="DRDO Logo" class="logo"> -->
+                <div class="header-text">
+                    <!-- <h1>Defence Research & Development Organisation</h1> -->
+                    <h1>Aircraft Functionality Configuration System</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Toolbox -->
+            <div class="toolbox">
+                <h3><i class="fas fa-tools"></i> Functionality Toolbox</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search functionalities...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="functionality-list" id="functionalityList">
+                    <div class="functionality-item" data-func="takeoff">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>TakeOff</span>
+                    </div>
+                    <div class="functionality-item" data-func="navigate">
+                        <i class="fas fa-route"></i>
+                        <span>Navigate</span>
+                    </div>
+                    <div class="functionality-item" data-func="targetlock">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>TargetLock</span>
+                    </div>
+                    <div class="functionality-item" data-func="deployflares">
+                        <i class="fas fa-fire"></i>
+                        <span>DeployFlares</span>
+                    </div>
+                    <div class="functionality-item" data-func="bombdrop">
+                        <i class="fas fa-bomb"></i>
+                        <span>BombDrop</span>
+                    </div>
+                    <div class="functionality-item" data-func="enemydetection">
+                        <i class="fas fa-radar"></i>
+                        <span>EnemyDetection</span>
+                    </div>
+                    <div class="functionality-item" data-func="missilenavigation">
+                        <i class="fas fa-rocket"></i>
+                        <span>MissileNavigation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aircraft Display -->
+            <div class="aircraft-display">
+                <div class="aircraft-container">
+                    <h3><i class="fas fa-fighter-jet"></i> Aircraft Configuration</h3>
+                    <div class="aircraft-view">
+                        <div class="aircraft" id="aircraft">
+                            <svg viewBox="0 0 200 100" class="aircraft-svg">
+                                <!-- Aircraft body -->
+                                <path d="M20 50 L180 50 L190 45 L190 55 Z" fill="#2c3e50" stroke="#34495e" stroke-width="2"/>
+                                <!-- Wings -->
+                                <path d="M60 50 L40 30 L80 30 L100 50 Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+                                <path d="M60 50 L40 70 L80 70 L100 50 Z" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+                                <!-- Cockpit -->
+                                <circle cx="170" cy="50" r="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                                <!-- Engines -->
+                                <circle cx="30" cy="50" r="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+                            </svg>
+                            <div id="aircraftFunctionalityIcons" class="aircraft-functionality-icons"></div>
+                        </div>
+                        <div class="functionality-indicators" id="functionalityIndicators"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <h3><i class="fas fa-cog"></i> Control Panel</h3>
+                <div class="selected-functionalities">
+                    <h4>Selected Functionalities:</h4>
+                    <div id="selectedFunctionalities" class="selected-list"></div>
+                </div>
+                <div class="control-buttons">
+                    <button id="saveAircraft" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Aircraft
+                    </button>
+                    <button id="loadAircraft" class="btn btn-secondary">
+                        <i class="fas fa-upload"></i> Load Aircraft
+                    </button>
+                    <input type="file" id="loadAircraftFileInput" accept="application/json" style="display:none" />
+                    <button id="startSimulation" class="btn btn-success">
+                        <i class="fas fa-play"></i> Start Simulation
+                    </button>
+                    <button id="clearAll" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulation Panel -->
+        <div class="simulation-panel" id="simulationPanel">
+            <h3><i class="fas fa-satellite"></i> Combat Simulation</h3>
+            <div class="simulation-area">
+                <div class="battlefield" id="battlefield">
+                    <div class="aircraft-info player-info">
+                        <span id="playerName">Player Aircraft</span>
+                        <div class="health-bar"><div id="playerHealthBar" class="health-fill"></div></div>
+                        <span id="playerStatus">Status: Active</span>
+                    </div>
+                    <div class="player-aircraft" id="playerAircraft">
+                        <i class="fas fa-fighter-jet"></i>
+                    </div>
+                    <div class="aircraft-info enemy-info">
+                        <span id="enemyName">Enemy Aircraft</span>
+                        <div class="health-bar"><div id="enemyHealthBar" class="health-fill"></div></div>
+                        <span id="enemyStatus">Status: Active</span>
+                    </div>
+                    <div class="enemy-aircraft" id="enemyAircraft">
+                        <i class="fas fa-fighter-jet"></i>
+                    </div>
+                    <div id="battlefieldEffects"></div>
+                    <div id="missionBanner" class="mission-banner" style="display:none"></div>
+                </div>
+                <div class="manual-controls" id="manualControls" style="justify-content:center; margin: 18px 0 8px 0;">
+                    <button class="btn btn-action" id="manualMissile"><i class="fas fa-rocket"></i> Fire Missile</button>
+                    <button class="btn btn-action" id="manualBomb"><i class="fas fa-bomb"></i> Drop Bomb</button>
+                    <button class="btn btn-action" id="manualFlares"><i class="fas fa-fire"></i> Deploy Flares</button>
+                    <button class="btn btn-action" id="manualRadar"><i class="fas fa-radar"></i> Radar</button>
+                    <button class="btn btn-action" id="manualReplay"><i class="fas fa-redo"></i> Replay</button>
+                </div>
+                <div class="simulation-log" id="simulationLog"></div>
+                <div class="behavior-tree-status" id="behaviorTreeStatus">
+                    <h4>Intelligent Behavior Tree Status</h4>
+                    <p>Decision-making system is active. Aircraft will make intelligent choices based on combat situation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="loadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Load Aircraft Configuration</h3>
+            <div id="aircraftList"></div>
+        </div>
+    </div>
+
+    <!-- ...existing code... -->
+<script src="{{ url_for('static', filename='css/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='css/js/aircraft.js') }}"></script>
+<script src="{{ url_for('static', filename='css/js/simulation.js') }}"></script>
+</body>
+</html>
