@@ -4,13 +4,13 @@ This project demonstrates an automation system for combat aircraft using **Behav
 
 ---
 
-## 📌 Objective
+##  Objective
 
 To simulate and evaluate autonomous decision-making for unmanned combat aircraft using modular, extensible behavior trees — improving mission efficiency, survivability, and adaptive tactics.
 
 ---
 
-## 🧱 Key Features
+##  Key Features
 
 - 🧠 Modular behavior tree engine  
 - 🌐 Web-based UI (Flask)  
@@ -20,4 +20,18 @@ To simulate and evaluate autonomous decision-making for unmanned combat aircraft
 
 ---
 
-## 🗂 Project Structure
+##  Project Structure
+├── app.py                      # Main Flask app
+├── behavior_trees/            # Core behavior tree logic
+├── templates/                 # Web interface templates
+├── static/                    # CSS/JS and visualization assets
+
+
+## Run the web interface
+  python app.py
+
+
+
+
+
+
