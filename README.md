@@ -21,14 +21,17 @@ To simulate and evaluate autonomous decision-making for unmanned combat aircraft
 ---
 
 ##  Project Structure
-├── app.py                      # Main Flask app
+├──app.py                      # Main Flask app
+
 ├── behavior_trees/            # Core behavior tree logic
+
 ├── templates/                 # Web interface templates
+
 ├── static/                    # CSS/JS and visualization assets
 
 
 ## Run the web interface
-  python app.py
+  -  python app.py
 
 
 
