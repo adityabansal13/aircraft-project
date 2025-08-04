@@ -1,6 +1,6 @@
 # ✈️ Combat Aircraft Automation using Behavior Trees
 
-This project demonstrates an automation system for combat aircraft using **Behavior Trees**, developed for research and prototyping under DRDO guidance.
+This project demonstrates an automation system for combat aircraft using **Behavior Trees**.
 
 ---
 
